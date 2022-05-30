@@ -230,6 +230,9 @@ export default class RecyclerListView<P extends RecyclerListViewProps, S extends
                 }
             }
         }
+        if (this.refreshRequestDebouncer) {
+            this.refreshRequestDebouncer.cancel();
+        }
     }
 
     public scrollToIndex(index: number, animate?: boolean): void {
